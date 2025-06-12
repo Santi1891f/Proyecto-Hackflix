@@ -6,19 +6,19 @@ function MovieList() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">Lista de Películas</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <h1 className="text-2xl">Lista de Películas</h1>
+      <div className="grid ">
         {peliculas.map((peli) => (
-          <div key={peli.id} className="border rounded-lg shadow-md overflow-hidden">
+          <div key={peli.id} className="border">
             <img
               src={peli.poster_path}
               alt={peli.title}
-              className="w-full h-72 object-cover"
+              className=""
             />
             <div className="p-3">
-              <h2 className="font-semibold text-lg">{peli.title}</h2>
-              <p className="text-sm text-gray-600">{peli.release_date}</p>
-              <p className="text-sm mt-2">{peli.overview}</p>
+              <h2 className="">{peli.title}</h2>
+              <p className="">{peli.release_date}</p>
+              <p className="">{peli.overview}</p>
             </div>
           </div>
         ))}
