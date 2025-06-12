@@ -1,4 +1,3 @@
-// modo oscuro
 function oscuro() {
   document.addEventListener("DOMContentLoaded", (event) => {
     const htmlElement = document.documentElement;
@@ -19,5 +18,5 @@ function oscuro() {
     });
   });
 }
-return oscuro;
-export default Oscuro;
+
+export default NavBar;
