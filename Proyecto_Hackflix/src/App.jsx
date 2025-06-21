@@ -6,18 +6,25 @@ import Inicio from './components/Front/Inicio';
 import Carrusel from './components/Front/Carrusel';
 
 function App() {
-  const [peliculasPorGenero, setPeliculasPorGenero] = useState([]);
+  const [carruseles, setCarruseles] = useState([]);
 
   useEffect(() => {
     fetch('/data/movies.json')
       .then((res) => res.json())
       .then((data) => {
-        // Agrupar películas de a 4 por slide
-        const agrupadas = data.map((categoria) => ({
-          ...categoria,
-          peliculas: agruparPorSlide(categoria.peliculas, 4),
-        }));
-        setPeliculasPorGenero(agrupadas);
+        const tamañoCarrusel = 12;
+        const cantidadPorSlide = 4;
+       const gruposDeCarrusel = [];
+        for (let i = 0; i < data.length; i += tamañoCarrusel) {
+          const chunk = data.slice(i, i + tamañoCarrusel);
+          gruposDeCarrusel.push(chunk);
+        }
+
+   const carruselesFormateados = gruposDeCarrusel.map((peliculas, index) => ({
+          id: `carrusel${index + 1}`,
+          titulo: `Películas ${index + 1}`,
+          peliculas: agruparPorSlide(peliculas, cantidadPorSlide),
+        }));setCarruseles(carruselesFormateados);
       });
   }, []);
 
@@ -33,7 +40,7 @@ function App() {
     <div>
       <Inicio />
       <main className="container py-5">
-        {peliculasPorGenero.map((categoria) => (
+        {carruseles.map((categoria) => (
           <Carrusel
             key={categoria.id}
             id={categoria.id}
