@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import './App.css';
 import Inicio from './components/Front/Inicio';
 import Carrusel from './components/Front/Carrusel';
-
+import ListaPelis from './components/Front/listaPelis';
 function App() {
   const [carruseles, setCarruseles] = useState([]);
 
@@ -46,8 +46,10 @@ function App() {
             id={categoria.id}
             titulo={categoria.titulo}
             peliculas={categoria.peliculas}
-          />
+          /> 
+          
         ))}
+        <ListaPelis />
       </main>
     </div>
   );
