@@ -12,8 +12,10 @@
   "dependencies": {
     "fflate": "^0.8.2",
     "jszip": "^3.10.1",
+    "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-rating-stars-component": "^2.2.0",
     "react-simple-star-rating": "^5.1.7"
   },
   "devDependencies": {
