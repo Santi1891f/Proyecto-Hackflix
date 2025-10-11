@@ -1,0 +1,64 @@
+.MovieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.TPostMv {
+  flex: 0 0 185px; 
+  box-sizing: border-box;
+}
+
+.TPost {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  overflow: hidden;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.TPost:hover {
+  transform: scale(1.05);
+}
+
+.Image img {
+  width: 100%;
+  height: 278px; /* fuerza altura fija para uniformidad */
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #444;
+}
+
+.Title {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Year {
+  display: block;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+.ClB {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #fff;
+  top: 8px;
+  left: 8px;
+  font-size: 0.8rem;
+}
